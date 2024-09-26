@@ -1,0 +1,404 @@
+
+.body-homepage {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Cabeçalho */
+.cabecalho-welcome {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 60px;
+    background-color: #ffffff;
+    color: #333;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap; /* Responsivo */
+}
+
+.conteudo-cabecalho {
+    max-width: 50%;
+}
+
+.conteudo-cabecalho h1{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    font-size: 52px
+}
+
+.conteudo-cabecalho p{
+    font-size: 32px;
+}
+
+.cabecalho h1 {
+    font-size: 40px;
+    margin-bottom:30px;
+}
+
+
+.destaque {
+    font-size: 52px;
+    color: #B01818;
+}
+
+.cabecalho p {
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.botao-cadastro {
+    padding: 12px 30px;
+    background-color: #B01818;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 30px;
+    transition: background-color 0.3s ease;
+    width: 291px;
+    height: 60px;
+}
+
+.botao-cadastro:hover {
+    background-color: #B01818;
+}
+
+.imagem-cabecalho img {
+    height: auto;
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.imagem-cabecalho {       /* Estilos para as setas de navegação */
+    position: relative;
+    max-width: 100%;
+}
+
+.imagem-cabecalho .material-symbols-outlined {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+
+}
+
+.imagem-cabecalho .material-symbols-outlined.arrow_back_ios {
+    left: -40px; /* Ajuste a posição da seta à esquerda */
+}
+
+.imagem-cabecalho .material-symbols-outlined.arrow_forward_ios {
+    right: -40px; /* Ajuste a posição da seta à direita */
+}
+
+
+
+
+/* Seção de Serviços */
+/* Seção de Serviços */
+.servicos {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 50px 20px;
+    margin-bottom: 90px;
+}
+
+.servicos h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.container-servicos {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.container-servicos .material-symbols-outlined {
+    margin-right: 0px;
+}
+
+.cartao-servico {
+    background-color: white;
+    padding: 20px;
+    width: 250px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+}
+
+.cartao-servico:hover {
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cartao-servico .material-symbols-outlined {
+    font-size: 48px;
+    color: #B01818;
+    margin-bottom: 15px;
+}
+
+.cartao-servico h3 {
+    font-size: 1.2rem;
+    margin: 15px 0;
+    color: #333;
+}
+
+.cartao-servico p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.div-cartao{
+    width: 210px;
+    height: 199px;
+}
+
+.button-view{
+    margin-top: 20px;
+    font-size: 25px;
+    color: #B01818;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+/* Seção de Salas */
+.salas {
+    padding: 40px 20px;
+    background-color: #ffffff;
+}
+
+.salas h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #333;
+}
+
+.grid-salas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 0 10px;
+}
+
+.cartao-sala {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+}
+
+.cartao-sala:hover {
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cartao-sala img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.cartao-sala p {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* --------------------------------------------------- */
+/* Estilo Geral para a Seção */
+.Salas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.Salas-text p:first-child {
+    font-size: 24px;
+    font-family: "Poppins", sans-serif;
+    color: #000;
+}
+
+.Salas-text p:nth-child(2) {
+    font-size: 40px;
+    color: rgba(43, 43, 43, 1);
+}
+
+.Salas-text p:last-child {
+    font-size: 20px;
+    color: rgba(0, 0, 0, 1);
+}
+
+/* Estilo para os Botões */
+.botoes-salas {
+    display: flex;
+    gap: 15px;
+}
+
+.botao-sala {
+    width: 60px;
+    height: 58px;
+    background-color: #B01818;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.botao-sala:hover {
+    opacity: 0.8;
+}
+
+.botao-sala .material-symbols-outlined {
+    font-size: 28px;
+    color: #E8EAED;
+    margin-right: 0px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 20px;
+}
+
+/* Cartão de cada item */
+.item-card-w {
+    width: 190px;
+    height: 254px;
+    border-radius: 30px;
+    background: lightgrey;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 50px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 26px -18px inset;
+    transition: transform 0.3s ease;
+    margin-bottom: 200px;
+}
+
+.item-card-w:hover {
+    transform: translateY(-5px);
+    cursor: pointer;
+}
+
+/* Container da imagem */
+.image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px 15px 0 0;
+    width: 339px;
+    height:334px;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: inherit;
+}
+
+/* Badge */
+.badge {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: #B01818;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 12px;
+}
+
+/* Informações do item */
+.item-info {
+    padding: 15px;
+    text-align: left;
+}
+
+.item-info h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.item-info p {
+    font-size: 14px;
+    color: #666;
+    margin: 2px 0;
+}
+
+
+
+
+/* Ajustar número de colunas em telas menores */
+@media (max-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Ajustar largura da imagem no header em telas menores */
+@media (max-width: 768px) {
+    .conteudo-cabecalho {
+        max-width: 100%; /* Ajuste para telas menores */
+        text-align: center;
+    }
+    
+    .cabecalho-welcome {
+        flex-direction: column; /* Empilhar conteúdo verticalmente */
+        padding: 30px 20px;
+    }
+
+    .image-container img{
+        max-width: 450px;
+    }
+
+    .item-card{
+        max-width: 450px;
+    }
+
+    .grid-container{
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+
+
+
+
+.imagem-cabecalho {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.carousel-container {
+    display: flex;
+    overflow: hidden;
+    width: 480px;
+    height: 422px;
+}
+
+.carousel-container img {
+    width: 480px;
+    height: 422px;
+    border-radius: 10px;
+    flex-shrink: 0;
+}

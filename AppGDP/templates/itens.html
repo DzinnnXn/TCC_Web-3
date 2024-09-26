@@ -1,0 +1,188 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block body %}
+{% include "navbar.html" %}
+
+<main class="bg-body-i-w">
+    <h1>Itens</h1>
+    <h2>Sala - {{ item.sala }}</h2>
+
+    <div class="search-container">
+        <form id="searchForm" method="GET" action="{% url 'buscar_itens' %}">
+            <div class="search-container">
+                <button type="submit">
+                    <span class="material-symbols-outlined" id="iconItens">search</span>
+                </button>
+                <input class="input-itens" type="text" name="q" id="searchInput"
+                    placeholder="Buscar por número de inventário...">
+            </div>
+        </form>
+
+        <button>
+            <span class="material-symbols-outlined" id="iconItens">filter_list</span>
+        </button>
+
+        <button class="add-button" onclick="openModal('modalAddItem')">
+            <span class="material-symbols-outlined" id="iconItens">add_circle</span>
+            <p class="add-text">Adicionar</p>
+        </button>
+    </div>
+
+    <div class="items-container">
+        {% for item in inventario %}
+        <div class="item-card"
+            onclick="openItemModal('{{ item.denominacao }}', '{{ item.num_inventario }}', '{{ item.link_imagem }}', '{{ item.localizacao }}', '{{ item.sala }}')">
+            <div class="bg-img">
+                <img src="{{ item.link_imagem }}" alt="{{ item.denominacao }}">
+            </div>
+            <div class="inf">
+                <h3>{{ item.denominacao }}</h3>
+                <p>ID: {{ item.num_inventario }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Modal de Visualização do Item -->
+    <div id="modalItem" class="modal">
+        <div class="modal-content">
+            <button type="button" class="btn-close" onclick="closeModal('modalItem')">X</button>
+            <h2 class="adicionarH2Itens">Informações</h2>
+
+            <form id="deleteItemForm" method="POST" action="{% url 'excluir_inventario' %}">
+                {% csrf_token %}
+
+                <label for="denominacaoInput">Denominação:</label>
+                <input type="text" id="denominacaoInput" name="denominacao" value="" readonly>
+
+                <label for="numInventarioInput">Número de Inventário:</label>
+                <input type="text" id="numInventarioInput" name="numInventario" value="" readonly>
+
+                <label for="localizacaoInput">Localização: </label>
+                <input type="text" id="localizacaoInput" name="localizacao" value="" readonly>
+
+                <label for="salaInput">Sala:</label>
+                <input type="text" id="salaInput" name="sala" value="" readonly>
+
+                <label for="imagemInput">Imagem:</label>
+                <input type="text" id="imagemInput" name="imagem" value="" readonly>
+
+                <input type="hidden" name="num_inventario" id="numInventarioExcluir" value="">
+
+                <div class="modal-actions">
+                    <button type="button" class="btn-edit" onclick="editarItem()">Editar</button>
+                    <button type="button" class="btn-delete" onclick="openDeleteConfirmation()">Excluir</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Confirmação de Adição -->
+    <div id="modalConfirmation" class="modal-confirmation">
+        <div class="modal-content-confirmation">
+            <h2>Item Adicionado!</h2>
+            <p>O item foi adicionado com sucesso ao inventário.</p>
+            <button class="btn-close-confirmation" onclick="closeConfirmation()">Fechar</button>
+        </div>
+    </div>
+
+    <!-- Modal de Confirmação de Exclusão -->
+    <div id="modalDeleteConfirmation" class="modal-confirmation">
+        <div class="modal-content-confirmation">
+            <h2>Confirmar Exclusão</h2>
+            <p>Tem certeza que deseja excluir este item?</p>
+            <div class="modal-actions">
+                <button type="button" class="btn-close-confirmation" onclick="closeDeleteConfirmation()">Cancelar</button>
+                <button type="button" class="btn-close-confirmation" onclick="submitDeleteForm()">Excluir</button>
+            </div>
+        </div>  
+    </div>
+
+    <div id="modalAddItem" class="modal">
+        <div class="modal-content">
+            <button type="button" class="btn-close" onclick="closeModal('modalAddItem')">X</button>
+            <h2 class="adicionarH2Itens">Adicionar Item</h2>
+            <form id="addItemForm" method="POST" action="{% url 'adicionar_inventario' %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="modal-actions">
+                    <button type="submit" class="btn-add">Adicionar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openItemModal(denominacao, numInventario, linkImagem, localizacao, sala) {
+            document.getElementById('denominacaoInput').value = denominacao;
+            document.getElementById('numInventarioInput').value = numInventario;
+            document.getElementById('imagemInput').value = linkImagem;
+            document.getElementById('localizacaoInput').value = localizacao;
+            document.getElementById('salaInput').value = sala;
+
+            // Definir o valor do num_inventario no campo oculto de exclusão
+            document.getElementById('numInventarioExcluir').value = numInventario;
+
+            openModal('modalItem');
+        }
+
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        function openDeleteConfirmation() {
+            document.getElementById('modalDeleteConfirmation').style.display = 'block';
+        }
+
+        function closeDeleteConfirmation() {
+            document.getElementById('modalDeleteConfirmation').style.display = 'none';
+        }
+
+        function submitDeleteForm() {
+            document.getElementById('deleteItemForm').submit();
+        }
+
+        window.onclick = function (event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = "none";
+            }
+        }
+
+        function openConfirmation() {
+            document.getElementById('modalConfirmation').style.display = 'block';
+        }
+
+        function closeConfirmation() {
+            document.getElementById('modalConfirmation').style.display = 'none';
+            window.location.href = "{% url 'itens' %}";
+        }
+
+        document.getElementById('addItemForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+
+            fetch("{% url 'adicionar_inventario' %}", {
+                method: 'POST',
+                body: formData,
+            })
+                .then(response => {
+                    if (response.ok) {
+                        closeModal('modalAddItem');
+                        openConfirmation();
+                    } else {
+                        alert("Erro ao adicionar o item.");
+                    }
+                })
+                .catch(error => {
+                    console.error("Erro:", error);
+                });
+        });
+    </script>
+
+</main>
+{% endblock %}

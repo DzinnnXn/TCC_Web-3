@@ -1,0 +1,173 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block body %}
+
+{% include "navbar.html" %}
+<div class="body-homepage">
+    <header class="cabecalho-welcome">
+        <div class="conteudo-cabecalho">
+            <h1>Bem-vindo ao <span class="destaque"> <br> Patrimônios </span> & <span class="destaque">Ordem</span></h1>
+            <p>Sua solução definitiva para gerenciar patrimônios de maneira eficiente e organizada.</p>
+            <button class="botao-cadastro">Cadastre-se</button>
+        </div>
+        <div class="imagem-cabecalho">
+            <div class="carousel-container">
+                <img src="{% static 'img/img1.png' %}" alt="Imagem 1">
+            </div>
+        </div>
+    </header>
+
+    <section class="servicos">
+        <h2>Serviços</h2>
+        <div class="container-servicos">
+            <div class="cartao-servico">
+                <div class="div-cartao">
+                    <span class="material-symbols-outlined"> edit_note </span>
+                    <h3>Editar e Mover Patrimônios</h3>
+                    <p>Soluções eficientes para controlar e monitorar seus ativos.</p>
+                </div>
+                <button class="button-view">
+                    Ver
+                </button>
+            </div>
+            <div class="cartao-servico">
+                <div class="div-cartao">
+                    <span class="material-symbols-outlined"> engineering </span>
+                    <h3>Adicionar a lista de manutenção do patrimônio</h3>
+                    <p>Proteção máxima para o seu patrimônio com tecnologia de ponta.</p>
+                </div>
+                <button class="button-view">
+                    Ver
+                </button>
+            </div>
+            <div class="cartao-servico">
+                <div class="div-cartao">
+                    <span class="material-symbols-outlined"> flaky </span>
+                    <h3>Adicionar & Excluir um patrimônio</h3>
+                    <p>Relatórios completos para a melhor tomada de decisões.</p>
+                </div>
+                <button class="button-view">
+                    Ver
+                </button>
+            </div>
+            <div class="cartao-servico">
+                <div class="div-cartao">
+                    <span class="material-symbols-outlined"> data_table </span>
+                    <h3>Ver Tabela de Patrimônios</h3>
+                    <p>Assistência contínua para garantir a tranquilidade da sua operação.</p>
+                </div>
+                <button class="button-view">
+                    Ver
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="Salas">
+            <div class="Salas-text">
+                <p>Vá para esta página</p>
+                <p>Salas</p>
+                <p>Salas mais utilizadas do Senai!</p>
+            </div>
+            <div class="botoes-salas">
+                <div class="botao-sala">
+                    <span class="material-symbols-outlined">
+                        edit
+                        </span>
+                </div>
+                <div class="botao-sala">
+                    <span class="material-symbols-outlined">
+                        add_circle
+                        </span>
+                </div>
+                <div class="botao-sala">
+                    <span class="material-symbols-outlined">
+                        delete
+                        </span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="grid-container">
+        <div class="item-card-w">
+            <div class="image-container">
+                <img src="{% static 'img/salaImage.png' %}" alt="Notebook Dell 80GB">
+                <span class="badge">40</span>
+            </div>
+            <div class="item-info">
+                <h3>Sala C13</h3>
+                <p>1260689</p>
+                <p>Notebook de Número 15</p>
+                <p>Localizado na C13</p>
+            </div>
+        </div> 
+        <div class="item-card-w">
+            <div class="image-container">
+                <img src="{% static 'img/salaImage.png' %}" alt="Notebook Dell 80GB">
+                <span class="badge">40</span>
+            </div>
+            <div class="item-info">
+                <h3>Sala C14</h3>
+                <p>1260689</p>
+                <p>Notebook de Número 15</p>
+                <p>Localizado na C14</p>
+            </div>
+        </div>
+        <!-- ---------------------- -->
+        <div class="item-card-w">
+            <div class="image-container">
+                <img src="{% static 'img/salaImage.png' %}" alt="Notebook Dell 80GB">
+                <span class="badge">40</span>
+            </div>
+            <div class="item-info">
+                <h3>Sala C15</h3>
+                <p>1260689</p>
+                <p>Notebook de Número 15</p>
+                <p>Localizado na C15</p>
+            </div>
+        </div>
+        <!-- ---------------------- -->
+        <div class="item-card-w">
+            <div class="image-container">
+                <img src="{% static 'img/salaImage.png' %}" alt="Notebook Dell 80GB">
+                <span class="badge">40</span>
+            </div>
+            <div class="item-info">
+                <h3>Sala C16</h3>
+                <p>1260689</p>
+                <p>Notebook de Número 15</p>
+                <p>Localizado na C16</p>
+            </div>
+        </div>
+        <!-- ---------------------- -->
+        <div class="item-card-w">
+            <div class="image-container">
+                <img src="{% static 'img/salaImage.png' %}" alt="Notebook Dell 80GB">
+                <span class="badge">40</span>
+            </div>
+            <div class="item-info">
+                <h3>Sala C17</h3>
+                <p>1260689</p>
+                <p>Notebook de Número 15</p>
+                <p>Localizado na C17</p>
+            </div>
+        </div>
+        <!-- ---------------------- -->
+        <div class="item-card-w">
+            <div class="image-container">
+                <img src="{% static 'img/salaImage.png' %}" alt="Notebook Dell 80GB">
+                <span class="badge">40</span>
+            </div>
+            <div class="item-info">
+                <h3>Sala C18</h3>
+                <p>1260689</p>
+                <p>Notebook de Número 15</p>
+                <p>Localizado na C18</p>
+            </div>
+        </div>
+    </section>
+</div>
+
+{% endblock %}
